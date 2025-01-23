@@ -65,9 +65,7 @@ async def save_email(state: State, config, store: BaseStore, status: str):
     )
     key = state["email"]["id"]
     response = await store.aget(namespace, key)
-    print(f"This is response: {response}")
     if response is None:
-        print("foooo")
         data = {"input": state["email"], "triage": status}
         await store.aput(namespace, str(uuid.uuid4()), data)
 

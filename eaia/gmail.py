@@ -261,7 +261,7 @@ def fetch_group_emails(
                 }
                 count += 1
         except Exception:
-            print(f"Failed on {message}")
+            logger.info(f"Failed on {message}")
 
     logger.info(f"Found {count} emails.")
 
@@ -415,5 +415,5 @@ def send_calendar_invite(
         ).execute()
         return True
     except Exception as e:
-        print(f"An error occurred: {e}")
+        logger.info(f"An error occurred while sending the calendar invite: {e}")
         return False
