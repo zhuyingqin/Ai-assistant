@@ -129,11 +129,11 @@ First, get your `LANGGRAPH_CLOUD_URL`
 To kick off an ingest job, run:
 
 ```shell
-python scripts/run_ingest.py --minutes-since 120 --rerun 1 --early 0 --prod ${LANGGRAPH-CLOUD-URL}
+python scripts/run_ingest.py --minutes-since 120 --rerun 1 --early 0 --url ${LANGGRAPH-CLOUD-URL}
 ```
 
 This will ingest all emails in the last 120 minutes (`--minutes-since`). It will NOT break early if it sees an email it already saw (`--early 0`) and it will
-rerun ones it has seen before (`--rerun 1`). It will run against the prod instance we have running (`--prod ${LANGGRAPH-CLOUD-URL}`)
+rerun ones it has seen before (`--rerun 1`). It will run against the prod instance we have running (`--url ${LANGGRAPH-CLOUD-URL}`)
 
 ### Set up Agent Inbox with LangGraph Cloud EAIA
 
